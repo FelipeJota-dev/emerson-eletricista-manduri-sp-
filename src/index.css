@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-electric-blue: #1E90FF;
+  --color-dark-blue: #0B1F3A;
+  --color-energy-red: #D32F2F;
+  --color-dark-gray: #1A1A1A;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Lightbox styles */
+.lightbox-overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+}
