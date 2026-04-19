@@ -15,7 +15,13 @@ import {
   Wrench,
   ThumbsUp,
   MapPinHouse,
-  Facebook
+  Facebook,
+  Cable,
+  UtilityPole,
+  PanelTop,
+  Fan,
+  Mic,
+  Snowflake
 } from 'lucide-react';
 
 const WHATSAPP_NUMBER = "5514997524980";
@@ -40,14 +46,14 @@ const serviceImages = [
 ];
 
 const services = [
-  "Instalações elétricas residenciais e comerciais",
-  "Baixa tensão rural",
-  "Ligações de telefone",
-  "Montagem de padrão",
-  "Instalação de ventiladores",
-  "Interfones",
-  "Ar condicionado",
-  "Manutenção elétrica geral"
+  { name: "Instalações elétricas residenciais e comerciais", icon: Cable },
+  { name: "Baixa tensão rural", icon: UtilityPole },
+  { name: "Ligações de telefone", icon: Phone },
+  { name: "Montagem de padrão", icon: PanelTop },
+  { name: "Instalação de ventiladores", icon: Fan },
+  { name: "Interfones", icon: Mic },
+  { name: "Ar condicionado", icon: Snowflake },
+  { name: "Manutenção elétrica geral", icon: Wrench }
 ];
 
 const reviews = [
@@ -303,12 +309,12 @@ export default function App() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-dark-gray p-6 rounded-2xl border border-gray-800 hover:border-electric-blue/50 transition-colors group cursor-default"
+                  className="bg-dark-gray p-6 rounded-2xl border border-gray-800 hover:border-electric-blue/50 group cursor-default hover:-translate-y-[6px] hover:scale-[1.03] transition-all duration-300 ease-out"
                 >
-                  <div className="bg-electric-blue/10 w-12 h-12 rounded-xl flex items-center justify-center text-electric-blue mb-4 group-hover:scale-110 transition-transform">
-                    <Zap className="w-6 h-6" />
+                  <div className="bg-electric-blue/10 w-12 h-12 rounded-xl flex items-center justify-center text-electric-blue mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(30,144,255,0.6)] transition-all duration-300 ease-out">
+                    <service.icon className="w-6 h-6" />
                   </div>
-                  <h4 className="font-bold text-lg mb-2">{service}</h4>
+                  <h4 className="font-bold text-lg mb-2">{service.name}</h4>
                 </motion.div>
               ))}
             </div>
